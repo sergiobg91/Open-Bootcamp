@@ -1,0 +1,18 @@
+{"level":"info","message":"Type info","service":"user-service"}
+{"level":"warn","message":"Type warning","service":"user-service"}
+{"level":"error","message":"Type error","service":"user-service"}
+{"level":"info","message":"Type info","service":"user-service"}
+{"level":"warn","message":"Type warning","service":"user-service"}
+{"level":"error","message":"Type error","service":"user-service"}
+{"level":"info","message":"Type info","service":"user-service"}
+{"level":"warn","message":"Type warning","service":"user-service"}
+{"level":"error","message":"Type error","service":"user-service"}
+{"level":"info","message":"Type info","service":"user-service"}
+{"level":"warn","message":"Type warning","service":"user-service"}
+{"level":"error","message":"Type error","service":"user-service"}
+{"level":"debug","message":"Type debug","service":"user-service"}
+{"level":"debug","message":"Type debug 2","service":"user-service"}
+{"level":"info","message":"Type info","service":"user-service"}
+{"level":"warn","message":"Type warning","service":"user-service"}
+{"level":"error","message":"Type error","service":"user-service"}
+{"level":"debug","message":"Type debug","service":"user-service"}
