@@ -1,0 +1,15 @@
+{
+    "extends": "eslint:recommended",
+    "parserOptions": {
+        "ecmaVersion": "latest"
+    },
+    "rules": {
+        "indent": ["error", 4],
+        "quotes": [ "error", "double"],
+        "semi": ["warn", "always"],
+        "linebreak-style": ["error", "windows"],
+        "no-dupe-keys": "error",
+        "no-unused-vars": "off",
+        "no-console": "error"
+    }
+}
