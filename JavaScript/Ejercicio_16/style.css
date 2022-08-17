@@ -1,0 +1,25 @@
+.section:not(.recycle) {
+    background-color: darkslategray;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+.paragraph {
+    background-color: white;
+    padding: 1rem;
+}
+
+pharagraph.draggin {
+    opacity: 0.3;
+    background-color: white;
+    padding: 1rem;
+}
+
+#img_recycle {
+    display: block;
+    margin: 0 auto;
+}
+
+.hide {
+    display: none;
+}
