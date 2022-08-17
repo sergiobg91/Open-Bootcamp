@@ -26,7 +26,7 @@ sections.forEach(section => {
         const idPharagraph = document.getElementById(e.dataTransfer.getData("id")); //captura la variable de contexto
 
         if (e.target.classList.contains("recycle"))
-            idPharagraph.classList.add("hide");
+            idPharagraph.remove();
         else
             section.appendChild(idPharagraph);
     });
