@@ -1,4 +1,4 @@
-# Ejercicio 1, 2 y 3 desarrollados con create-react-app
+# Unidad de introducción a react
 
 ### `npm start`
 
