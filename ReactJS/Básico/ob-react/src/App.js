@@ -13,10 +13,11 @@ function App() {
         {/* <Example1></Example1> */}
         {/* <Example2></Example2> */}
         {/* <ComponentWithContext></ComponentWithContext> */}
-        <Example4 name={"Sergio"}>
+        
         {/* Todo lo que hay dentro de Example4 es tratado como prop.children */}
+        {/* <Example4 name={"Sergio"}>
             <h3>Tag h3 como contenido del props.children</h3>
-        </Example4>
+        </Example4> */}
       </header>
     </div>
   );
