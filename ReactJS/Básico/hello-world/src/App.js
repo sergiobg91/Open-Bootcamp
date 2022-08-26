@@ -3,6 +3,7 @@ import './App.css';
 import Greeting from './components/pure/greeting.jsx';
 import GreetingFunct from './components/pure/greetingFunct.jsx';
 import TaskListComponent from './components/container/taskList';
+import GreetingStyle from './components/pure/greetingStyle';
 
 function App() {
 
@@ -13,9 +14,9 @@ function App() {
         {/* Comentario entre llaves ya que es JS*/}
         {/* <Greeting name={"Sergio"}></Greeting>
         <GreetingFunct name={"Sergio"}></GreetingFunct> */}
-
+        <GreetingStyle name={"Sergio"}/>
         {/*Componente de listado de tareas*/}
-        <TaskListComponent></TaskListComponent>
+        {/* <TaskListComponent></TaskListComponent> */}
       </header>
     </div>
   );
