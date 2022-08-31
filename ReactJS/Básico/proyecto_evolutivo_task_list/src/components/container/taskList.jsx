@@ -2,13 +2,16 @@ import React, { useState, useEffect } from 'react';
 import { LEVELS } from '../../models/levelsEnums';
 import { Task } from '../../models/taskClass';
 import TaskComponent from '../pure/task';
+import TaskForm from '../pure/forms/taskForm';
 import '../../styles/task.scss'
 
 const TaskListComponent = () => {
 
-    const defaultTask = new Task("React", "Learning React", false, LEVELS.URGENT);
+    const defaultTask1 = new Task("JavaScript", "Learn JS", true, LEVELS.NORMAL);
+    const defaultTask2 = new Task("React", "Learn React", false, LEVELS.URGENT);
+    const defaultTask3 = new Task("Node", "Learn NodeJS", false, LEVELS.BLOCKING);
 
-    const [tasks, setTasks] = useState([defaultTask]);
+    const [tasks, setTasks] = useState([defaultTask1, defaultTask2, defaultTask3]);
     const [loadingTasks, setLoadingTask] = useState(true);
 
     //Control ciclo de vida
@@ -30,11 +33,39 @@ const TaskListComponent = () => {
     
     return (
         <div>
-            <div>
-                <h1>Your task:</h1>
+            <div  className='col-12'>
+                <div className='card'>
+
+                    {/* card header title */}
+                    <div className='card-header p-3'>
+                        <h1>Your task:</h1>
+                    </div>
+
+                    {/* card Body */}
+                    <div className='card-body' data-mdb-perfect-scrollbar='true' style={ {position: 'relative', hight: '400px'} }>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th scope='col'>Title</th>
+                                    <th scope='col'>Description</th>
+                                    <th scope='col'>Level</th>
+                                    <th scope='col'>State</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                {/* El key es necesario para que react sepa el id de la task */}
+                                {tasks.map( (task, index)=> {
+                                    return (
+                                        <TaskComponent key={index} task= {task}></TaskComponent>
+                                    )
+                                })}
+                            </tbody>
+                        </table>
+                    </div>
+                    <TaskForm></TaskForm>
+                </div>
             </div>
-            {/* TODO: Iterar sobre lista de tareas para renderizar*/}
-            <TaskComponent task={defaultTask}></TaskComponent>
         </div>
     );
 };
