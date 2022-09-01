@@ -4,6 +4,7 @@ import Example1 from './hooks/example1';
 import Example2 from './hooks/example2';
 import ComponentWithContext from './hooks/example3';
 import Example4 from './hooks/example4';
+import Father from './components/container/father';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         {/* <Example4 name={"Sergio"}>
             <h3>Tag h3 como contenido del props.children</h3>
         </Example4> */}
+        <Father></Father>
       </header>
     </div>
   );
