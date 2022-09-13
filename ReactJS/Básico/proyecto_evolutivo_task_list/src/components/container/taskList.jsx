@@ -12,24 +12,39 @@ const TaskListComponent = () => {
     const defaultTask3 = new Task("Node", "Learn NodeJS", false, LEVELS.BLOCKING);
 
     const [tasks, setTasks] = useState([defaultTask1, defaultTask2, defaultTask3]);
-    const [loadingTasks, setLoadingTask] = useState(true);
+    const [loading, setLoading] = useState(true);
 
     //Control ciclo de vida
     useEffect(() => {
         console.log("Task state has been modified");
-        setLoadingTask(false);
+        setLoading(false);
         return () => {
             console.log("TaskListComponent is going to unMount");
         };
     }, [tasks]);
 
-    const addNewTask = () => {
-        // TODO
-    }
+    const completeTask = (task) => {
+        console.log("updating this task: ", task);
+        const index = tasks.indexOf(task);
+        const temporalTask = [...tasks];
+        temporalTask[index].completed = !temporalTask[index].completed;
+        setTasks(temporalTask); //Actualiza estado de tarea al marcar el icono de check
+    };
+    
+    const deleteTask = (task) => {
+        console.log("delete this task: ", task);
+        const index = tasks.indexOf(task);
+        const temporalTask = [...tasks];
+        temporalTask.splice(index, 1);
+        setTasks(temporalTask);
+    };
 
-    const changeCompleted = (idTask) => {
-        console.log("TODO: Change state of task with id: " + idTask);
-    }
+    const addTask = (task) => {
+        console.log("Add this task: ", task);
+        const temporalTask = [...tasks];
+        temporalTask.push(task);
+        setTasks(temporalTask);
+    };
     
     return (
         <div>
@@ -57,15 +72,15 @@ const TaskListComponent = () => {
                                 {/* El key es necesario para que react sepa el id de la task */}
                                 {tasks.map( (task, index)=> {
                                     return (
-                                        <TaskComponent key={index} task= {task}></TaskComponent>
+                                        <TaskComponent key={index} task= {task} complete={completeTask} remove={deleteTask}></TaskComponent>
                                     )
                                 })}
                             </tbody>
                         </table>
                     </div>
-                    <TaskForm></TaskForm>
                 </div>
             </div>
+            <TaskForm add={addTask}></TaskForm>
         </div>
     );
 };

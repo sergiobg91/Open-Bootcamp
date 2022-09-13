@@ -1,17 +1,9 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import { LEVELS } from '../../models/levelsEnums';
 import { Task } from '../../models/taskClass';
 import '../../styles/task.scss';
 
-const TaskComponent = ({task}) => {
-
-    useEffect(() => {
-        console.log("Task created");
-        return () => {
-            console.log(`Task: ${task.name} is going to unMount`);
-        };
-    }, [task]);
+const TaskComponent = ({ task, complete, remove }) => {
 
     const badgeLevels = () => {
         if (task.level === "Urgent")
@@ -21,10 +13,11 @@ const TaskComponent = ({task}) => {
         return "primary"
     };
 
+    // onClick={complete(task)}
     const taskCompletedIcon = () => {
         if (task.completed)
-            return (<i className='bi-toggle-on' style={ {color: 'green'} }></i>)
-        return (<i className='bi-toggle-off' style={ {color: 'grey'} }></i>)
+            return (<i onClick={ ()=> complete(task)} className='bi-toggle-on task-action' style={ {color: 'green'} }></i>);
+        return (<i onClick={ ()=> complete(task)} className='bi-toggle-off task-action' style={ {color: 'grey'} }></i>);
     };
 
     return (
@@ -41,7 +34,7 @@ const TaskComponent = ({task}) => {
             </td>
             <td className='align-middle'>
                 {taskCompletedIcon()}
-                <i className='bi-trash' style={ {color: 'tomato', fontSize: 'medium'} }></i>
+                <i onClick={ ()=> remove(task)} className='bi-trash task-action' style={ {color: 'tomato', fontSize: 'medium'} }></i>
             </td>
         </tr>
     );
@@ -49,7 +42,9 @@ const TaskComponent = ({task}) => {
 
 
 TaskComponent.propTypes = {
-    task: PropTypes.instanceOf(Task),
+    task: PropTypes.instanceOf(Task).isRequired,
+    complete: PropTypes.func.isRequired,
+    remove: PropTypes.func.isRequired,
 };
 
 
