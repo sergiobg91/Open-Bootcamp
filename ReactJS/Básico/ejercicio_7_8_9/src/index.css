@@ -1,0 +1,40 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+.root-contact {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1rem;
+  margin: 1rem;
+}
+
+.single-contact {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+}
+
+.contact-form {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  height: 5rem;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  background: #111;
+  background: rgba(0,0,0,.90);
+  border-top: 2px solid #f00;
+  z-index:10;
+}
