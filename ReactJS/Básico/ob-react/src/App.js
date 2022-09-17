@@ -5,6 +5,7 @@ import Example2 from './hooks/example2';
 import ComponentWithContext from './hooks/example3';
 import Example4 from './hooks/example4';
 import Father from './components/container/father';
+import OptionalRender from './components/pure/OptionalRender';
 
 function App() {
   return (
@@ -19,7 +20,10 @@ function App() {
         {/* <Example4 name={"Sergio"}>
             <h3>Tag h3 como contenido del props.children</h3>
         </Example4> */}
-        <Father></Father>
+        {/* <Father></Father> */}
+
+        {/* Ejemplos de renderizado condicional */}
+        <OptionalRender></OptionalRender>
       </header>
     </div>
   );
