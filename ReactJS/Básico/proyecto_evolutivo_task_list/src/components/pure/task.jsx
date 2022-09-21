@@ -20,9 +20,11 @@ const TaskComponent = ({ task, complete, remove }) => {
         return (<i onClick={ ()=> complete(task)} className='bi-toggle-off task-action' style={ {color: 'grey'} }></i>);
     };
 
+    const styleToTask = task.completed ? "task-completed" : "task-pending ";
+
     return (
         // ?className como nombre de clase para hojas de estilos
-        <tr className='fw-normal'>
+        <tr className={`fw-normal ${styleToTask}`}>
             <th>
                 <span className='ms-2'>{ task.name }</span>
             </th>
