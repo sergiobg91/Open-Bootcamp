@@ -20,7 +20,9 @@ const TaskListComponent = () => {
   //Control ciclo de vida
   useEffect(() => {
     console.log("Task state has been modified");
-    setLoading(false);
+    setTimeout( ()=> {
+      setLoading(false);
+    }, 1000);
     return () => {
       console.log("TaskListComponent is going to unMount");
     };
@@ -95,7 +97,7 @@ const TaskListComponent = () => {
 
           {/* card Body */}
           <div className="card-body" data-mdb-perfect-scrollbar="true" style={{ position: "relative", hight: "400px" }}>
-            {tastkTable}
+            {!loading ? tastkTable : (<h1>Loading...</h1>)}
           </div>
         </div>
       </div>
